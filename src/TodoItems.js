@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 
 class TodoItems extends Component {
-  createTasks(item) {
-    return <li key={item.key}>{item.text}</li>;
-  }
-
   render() {
     var todoEntries = this.props.entries;
-    var listItems = todoEntries.map(this.createTasks);
+    var listItems = todoEntries.map(item => (
+      <li key={item.key}>{item.text}</li>
+    ));
 
     return <ul className="theList">{listItems}</ul>;
   }

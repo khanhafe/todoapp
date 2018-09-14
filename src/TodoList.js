@@ -11,9 +11,9 @@ class TodoList extends React.Component {
   }
 
   addItem(e) {
-    if (this._inputElement.value !== "") {
+    if (this.refs.myRefs.value !== "") {
       var newItem = {
-        text: this._inputElement.value,
+        text: this.refs.myRefs.value,
         key: Date.now()
       };
 
@@ -23,7 +23,7 @@ class TodoList extends React.Component {
         };
       });
 
-      this._inputElement.value = "";
+      this.refs.myRefs.value = "";
     }
 
     console.log(this.state.items);
@@ -36,10 +36,7 @@ class TodoList extends React.Component {
       <div className="todoListMain">
         <div className="header">
           <form onSubmit={this.addItem}>
-            <input
-              placeholder="enter task"
-              ref={a => (this._inputElement = a)}
-            />
+            <input placeholder="enter task" ref="myRefs" />
             <button type="submit">add</button>
           </form>
         </div>
