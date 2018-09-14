@@ -17,9 +17,9 @@ class TodoList extends React.Component {
         key: Date.now()
       };
 
-      this.setState(prevState => {
+      this.setState(prevStatedd => {
         return {
-          items: prevState.items.concat(newItem)
+          items: prevStatedd.items.concat(newItem)
         };
       });
 
